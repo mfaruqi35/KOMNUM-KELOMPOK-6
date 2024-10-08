@@ -3,7 +3,7 @@ Penyelesaian Persamaan Non Linier dengan Metode Regula Falsi yang di implementas
 
 ### Anggota Kelompok:
 - MUHAMMAD FARUQI (2308107010005)
-- AKRIMMAH USRI
+- AKRIMAH USRI
 - KHALISHA ADZRAINI ARIF
 - IKRAM AL GHIFFARI
 - ASKA SHAHIRA
