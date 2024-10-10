@@ -1,4 +1,4 @@
-# KOMNUM-KELOMPOK-6
+# KOMNUM-KELOMPOK-3
 Penyelesaian Persamaan Non Linier dengan Metode Regula Falsi yang di implementasikan menggunakan code python.
 
 ### Anggota Kelompok:
