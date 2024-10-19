@@ -1,0 +1,55 @@
+def regula_falsi(a, b, tol, max_iter, func_str):
+    def f(x, func_str):
+        return eval(func_str)  # Evaluasi fungsi dari string
+
+    Fa = f(a, func_str)
+    Fb = f(b, func_str)
+    final_x = None
+
+    # Header tabel
+    print("+----------+------------+------------+------------+------------+------------+------------+-----------------+")
+    print("| Iterasi  |      a     |      b     |    f(a)    |    f(b)    |      x     |    f(x)    |     f(a)*f(x)   |")
+    print("+----------+------------+------------+------------+------------+------------+------------+-----------------+")
+
+    for i in range(1, max_iter + 1):
+        # Hitung x dengan formula regula falsi
+        x = (Fa * b - Fb * a) / (Fa - Fb)
+        Fx = f(x, func_str)
+
+        # Simpan x dari iterasi ke-8
+        if i == 8:
+            final_x = x
+
+        # Cetak setiap iterasi dengan format yang lebih rapi
+        print(f"| {i:<8} | {a:<10.5f} | {b:<10.5f} | {Fa:<10.5f} | {Fb:<10.5f} | {x:<10.5f} | {Fx:<10.5f} | {Fa * Fx:<15.6e} |")
+        print("+----------+------------+------------+------------+------------+------------+------------+-----------------+")
+
+        # Cek apakah akar ditemukan atau mendekati toleransi
+        if abs(Fx) < tol:
+            print(f"Akar ditemukan pada iterasi ke-{i}: x = {x:.5f}")
+            return x
+
+        # Perbarui batas interval berdasarkan tanda dari Fa * Fx
+        if Fa * Fx < 0:
+            b = x
+            Fb = Fx
+        else:
+            a = x
+            Fa = Fx
+
+    # Jika akar tidak ditemukan dalam max_iter, kembalikan nilai x pada iterasi ke-8
+    print(f"Tidak ditemukan akar dengan toleransi {tol} dalam {max_iter} iterasi.")
+    return final_x
+
+# Bagian Input dari Pengguna
+func_str = input("Masukkan fungsi f(x) (contoh: 'x**2 - 4*x + 3'): ")
+a = float(input("Masukkan nilai a: "))
+b = float(input("Masukkan nilai b: "))
+tol = float(input("Masukkan toleransi error: "))
+max_iter = int(input("Masukkan jumlah iterasi maksimum: "))
+
+# Panggil fungsi regula falsi
+root = regula_falsi(a, b, tol, max_iter, func_str)
+
+# Output akhir
+print(f"Akar dari persamaan {func_str} adalah x = {root:.5f}.")
