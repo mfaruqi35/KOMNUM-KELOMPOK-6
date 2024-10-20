@@ -8,3 +8,6 @@ def eval_funct(user_input, x):
     try:
         result = eval(func)
     except Exception as ex:
+        print("Terjadi Error: ", ex)
+        result = None
+    return result
