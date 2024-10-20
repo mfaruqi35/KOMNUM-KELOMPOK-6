@@ -6,3 +6,5 @@ def konversi(user_input):
 def eval_funct(user_input, x):
     func = konversi(user_input)
     try:
+        result = eval(func)
+    except Exception as ex:
