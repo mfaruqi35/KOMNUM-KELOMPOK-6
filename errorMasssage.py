@@ -4,6 +4,8 @@ from tkinter import messagebox
 def validate_input(fungsi, batas_bawah, batas_atas, toleransi_error, iterasi):
     try:
         # Periksa apakah input yang diterima valid
+        # Mengubah batas_bawah, batas_atas, dan toleransi_error menjadi float
+        # Mengubah iterasi menjadi integer
         batas_bawah = float(batas_bawah)
         batas_atas = float(batas_atas)
         toleransi_error = float(toleransi_error)
