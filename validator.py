@@ -13,7 +13,7 @@ def validate_inputs(func, a, b, tol, max_iter):
         tol = float(tol)
         max_iter = int(max_iter)
     except ValueError:
-        messagebox.showerror("Input Error", "Please enter valid numeric values for a, b, tolerance, and max iterations")
+        messagebox.showerror("Input Error", "Please enter valid numeric values for a, b, tolerance, and max iterations.")
         return False
 
     # Cek apakah batas bawah lebih kecil dari batas atas
