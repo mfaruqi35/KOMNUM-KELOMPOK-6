@@ -2,7 +2,7 @@ def evaluate_function(func, x):
     # Mengevaluasi fungsi di titik x
     return eval(func.replace('x', str(x)))
 
-def regula_falsi(func, a, b, tol=1e-6, max_iter=100):
+def regula_falsi(func, a, b, tol, max_iter):
     # Evaluasi nilai fungsi di batas bawah dan atas
     fa = evaluate_function(func, a)
     fb = evaluate_function(func, b)
