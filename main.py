@@ -7,6 +7,7 @@ from interface import build_interface
 def main():
     root = tk.Tk()
     root.title("Kalkulator Regula Falsi")
+    root.iconbitmap('assets/contoh2.ico')
     root.geometry("800x600")
 
     def calculate():
