@@ -17,3 +17,13 @@ def validate_input(fungsi, batas_bawah, batas_atas, toleransi_error, iterasi):
         if iterasi <= 0:
             raise ValueError("Jumlah iterasi harus lebih besar dari 0!")
 
+         # Jika semua validasi berhasil
+            return True
+        except ValueError as e:
+            # Jika ada kesalahan, tampilkan pesan error
+            messagebox.showerror("Input Error", str(e))
+            return False
+
+
+        
+
