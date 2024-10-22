@@ -9,6 +9,7 @@ def main():
     root.title("Kalkulator Regula Falsi")
     root.iconbitmap('assets/contoh2.ico')
     root.geometry("800x600")
+    root.config(bg='#f5f5f5')
 
     def calculate():
         func = entry_func.get()
@@ -25,7 +26,7 @@ def main():
             if root_result is None:
                 label_result.config(text="No root found in the interval.")
             else:
-                label_result.config(text=f"Root: {root_result}")
+                label_result.config(text=f"Hasil: {root_result}", padx=0)
                 
             # Clear Treeview sebelumnya
             for row in treeview.get_children():
