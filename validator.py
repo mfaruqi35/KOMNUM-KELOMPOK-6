@@ -2,33 +2,33 @@ import tkinter as tk
 from tkinter import messagebox
 
 def validate_inputs(func, a, b, tol, max_iter):
-    # Cek apakah fungsi sudah diisi
+    # Memeriksa apakah fungsi sudah diisi
     if not func:
-        messagebox.showerror("Input Error", "Please enter a valid function.")
+        messagebox.showerror("Kesalahan Input", "Silakan masukkan fungsi yang valid.")
         return False
-    
+        
     try:
         a = float(a)
         b = float(b)
         tol = float(tol)
         max_iter = int(max_iter)
+        
     except ValueError:
-        messagebox.showerror("Input Error", "Please enter valid numeric values for a, b, tolerance, and max iterations.")
+        messagebox.showerror("Kesalahan Input", "Silakan masukkan nilai numerik yang valid untuk a, b, toleransi, dan jumlah iterasi maksimum.")
         return False
-
-    # Cek apakah batas bawah lebih kecil dari batas atas
+        
+    # Memeriksa apakah batas bawah lebih kecil dari batas atas
     if a >= b:
-        messagebox.showerror("Input Error", "Lower bound 'a' must be less than upper bound 'b'.")
+        messagebox.showerror("Kesalahan Input", "Batas bawah 'a' harus lebih kecil dari batas atas 'b'.")
         return False
-
-    # Cek apakah toleransi lebih besar dari 0
+        
+    # Memeriksa apakah toleransi lebih besar dari 0
     if tol <= 0:
-        messagebox.showerror("Input Error", "Tolerance must be greater than zero.")
+        messagebox.showerror("Kesalahan Input", "Toleransi harus lebih besar dari nol.")
         return False
-
-    # Cek apakah iterasi maksimum adalah bilangan positif
+        
+    # Memeriksa apakah iterasi maksimum adalah bilangan positif
     if max_iter <= 0:
-        messagebox.showerror("Input Error", "Maximum iterations must be greater than zero.")
+        messagebox.showerror("Kesalahan Input", "Jumlah iterasi maksimum harus lebih besar dari nol.")
         return False
-
     return True
